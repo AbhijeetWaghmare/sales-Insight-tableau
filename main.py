@@ -24,23 +24,26 @@ html_code = """
 # Display the HTML in Streamlit
 st.markdown(html_code, unsafe_allow_html=True)
 st.divider()
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Problem Statement", "Aim Grids", "Data Discovery", "Observations","Tableau Dashboard"])
 
-st.header("Problem Statement")
-with st.expander("see details"):
+
+with tab1:
+    st.header("Problem Statement")
     st.write(
         """
-         AtliQ Hardware is a company that supplies hardware peripherals to different clients, such as Nomad stores, Excel stores, and SURGE stores. These are all the clients, and this is a hardware company that will supply computers and other peripheral networking equipment to them. They have a head office in Delhi, India, and they have regional offices in different states of India.
+         ### AtliQ Hardware is a company that supplies hardware peripherals to different clients, such as Nomad stores, Excel stores, and SURGE stores. These are all the clients, and this is a hardware company that will supply computers and other peripheral networking equipment to them. They have a head office in Delhi, India, and they have regional offices in different states of India.
 
-        Bhavin Patel is the sales director of this company, and he's managing the business from the head office, but they have regional managers per state, per region, or per district. And what's happening with this company is that sales are declining, and Bhavin Patel, as a sales director, is having a lot of struggle tracking where the business is failing (when the business is smaller, let's say you have 10 employees; a small business you can manage, but when your business is bigger and you have multiple offices, it's actually hard to manage). He is not getting the right picture (and that's when data analysis can help you).
+        #### Bhavin Patel is the sales director of this company, and he's managing the business from the head office, but they have regional managers per state, per region, or per district. And what's happening with this company is that sales are declining, and Bhavin Patel, as a sales director, is having a lot of struggle tracking where the business is failing (when the business is smaller, let's say you have 10 employees; a small business you can manage, but when your business is bigger and you have multiple offices, it's actually hard to manage). He is not getting the right picture (and that's when data analysis can help you).
 
-        So for Bhavin Patel, when he talks with the regional managers or regarding the business in their areas, the managers have a tendency to paint a rosy picture. So sometimes, you know, they don't lie, but they put sugar coating around the facts, and as a sales director, Bhavin doesn't have any idea what actually happens at ground level; you know, he doesn't have data insights. So that's the challenge that he goes through, and when he calls these regional managers, they will give him these big Excel files, you know, and these Excel files, as humans, we're not good at consuming so many numbers. You know we want simple insights, so he's frustrated because these managers are giving him so many Excel files, and he's like, Why the hell are you giving me 69 Excel files? I don't understand; I have to merge those files and get the insights myself, and it's very tedious, and Excel is kind of a boring tool.
+        #### So for Bhavin Patel, when he talks with the regional managers or regarding the business in their areas, the managers have a tendency to paint a rosy picture. So sometimes, you know, they don't lie, but they put sugar coating around the facts, and as a sales director, Bhavin doesn't have any idea what actually happens at ground level; you know, he doesn't have data insights. So that's the challenge that he goes through, and when he calls these regional managers, they will give him these big Excel files, you know, and these Excel files, as humans, we're not good at consuming so many numbers. You know we want simple insights, so he's frustrated because these managers are giving him so many Excel files, and he's like, Why the hell are you giving me 69 Excel files? I don't understand; I have to merge those files and get the insights myself, and it's very tedious, and Excel is kind of a boring tool.
 
-        So what he wants is some simple answers. You know, he wants to know: What are my top five customers? What are my two weakest regions where sales are declining? What is my aggregate revenue for the last 365 days? It is called year-to-date revenue. All these simple answers are hard to get, but there is a saying called A picture is worth a thousand words.
+        #### So what he wants is some simple answers. You know, he wants to know: What are my top five customers? What are my two weakest regions where sales are declining? What is my aggregate revenue for the last 365 days? It is called year-to-date revenue. All these simple answers are hard to get, but there is a saying called A picture is worth a thousand words.
     """
     )
 
-st.header("Aim Grids")
-with st.expander("see details"):
+
+with tab2:
+    st.header("Aim Grids")
     st.markdown(
         """
                 
@@ -67,8 +70,9 @@ with st.expander("see details"):
 """
     )
 
-st.header("Data Discovery")
-with st.expander("see details"):
+
+with tab3:
+    st.header("Data Discovery")
     st.markdown(
         "The sales management system stores data in a MySQL database with the help of data engineers. Data will be uploaded to the data warehouse (ETL), and now we can retrieve data from the warehouse with the help of data engineers. After getting access we will export data to csv files. And use python for data processing."
     )
@@ -151,8 +155,9 @@ with st.expander("see details"):
     transactions_with_usd = transactions[transactions["currency"] == "USD"]
     st.write(transactions_with_usd)
 
-st.header("Observations")
-with st.expander("see details"):
+
+with tab4:
+    st.header("Observations")
     st.markdown(
         """
                 - Customer table = 38 customer/clients with 2 distinct type "E-commerence" and 'Brick & Mortar'
@@ -167,8 +172,9 @@ In Tableau  we will do data clean and data visualization
                 """
     )
 
-st.header("Tableau Dashboard")
-with st.expander("see dashboard"):
+
+with tab5:
+    st.header("Tableau Dashboard")
     st.caption("select desktop layout to see entire dashboard")
     st.page_link("https://public.tableau.com/app/profile/abhijeet.waghmare/viz/salesinsight_17235689843210/Dashboard1",label="Dashboard Link")
     dashboard = """<div> <div class='tableauPlaceholder' id='viz1725455194509' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sa&#47;salesinsight_17235689843210&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='salesinsight_17235689843210&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sa&#47;salesinsight_17235689843210&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>  </div>              <script type='text/javascript'>                    var divElement = document.getElementById('viz1725455194509');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1500px';vizElement.style.height='927px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1500px';vizElement.style.height='927px';} else { vizElement.style.width='100%';vizElement.style.height='1777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>"""
